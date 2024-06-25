@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThetAungKhant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Goldman:wght@400;700&family=Michroma&family=Orbitron:wght@400;600;800;900&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Michroma', sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        section {
+            max-width: 600px;
+            width: 100%;
+            background-color: #333;
+            border: 2px solid #000;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .dashboard {
+            background-color: #1a1a1a;
+            border: 2px solid #000;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .window-bar, .item-bar {
+            background-color: #333;
+            color: #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+        }
+
+        .window-bar button, .item-bar span {
+            background-color: #FF66C1;
+            color: #333;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        .window-bar button:hover, .item-bar span:hover {
+            background-color: #8a2be2;
+            transform: translateY(-2px);
+        }
+
+        .profile {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #FF66C1;
+            text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .text {
+            font-size: 1.2rem;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            background-color: #FF66C1;
+            color: #333;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        .tab:hover {
+            background-color: #8a2be2;
+            transform: translateY(-2px);
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 10px;
+        }
+
+.tabcontent a {
+            color: #FF66C1;
+        }
+
+
+
+        .inside {
+            margin-top: 10px;
+        }
+
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills ul li {
+            margin-bottom: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: #f0f0f0;
+            font-size: 1.5rem;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #FF66C1;
+        }
+
+        @media (max-width: 500px) {
+            .window-bar, .item-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .window-bar button, .item-bar span {
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab {
+                width: 100%;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <div class="dashboard">
+        <div class="window-bar">
+            <p>⋆˚࿔Thet Aung Khant𝜗𝜚˚⋆ - Fullstack Developer</p>
+            <button>X</button>
+        </div>
+
+        <div class="profile">
+            <h2 class="title">ThetAungKhant</h2>
+            <p class="text">Let's bring pixel pieces to life! ε(´｡•᎑•`)っ 💕</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab" onclick="openCity(event, 'about')">About me</button>
+            <button class="tab" onclick="openCity(event, 'contact')">Contact</button>
+            <button class="tab" onclick="openCity(event, 'project')">What I do</button>
+            <button class="tab" onclick="openCity(event, 'skills')">Skills</button>
+        </div>
+    </div>
+
+    <div id="about" class="tabcontent">
+        <div class="item-bar">
+            <h3>General Info</h3>
+            <span onclick="this.parentElement.parentElement.style.display='none'">X</span>
+        </div>
+
+        <div class="inside">
+            <h2>About Thet Aung Khant</h2>
+            <ul>
+                <li><strong>Name:</strong> Thet Aung Khant</li>
+                <li><strong>Date of Birth:</strong> Mar 26, 2004</li>
+                <li><strong>Occupation:</strong> Full Stack Developer</li>
+                <li><strong>Location:</strong> Yangon, Myanmar</li>
+                <li><strong>Education:</strong> Higher national diploma in software engineering</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="contact" class="tabcontent">
+        <div class="item-bar">
+            <h3>Contact me</h3>
+            <span onclick="this.parentElement.parentElement.style.display='none'">X</span>
+        </div>
+
+        <div class="inside">
+            <h2>Contact Information</h2>
+            <ul>
+                <li><strong>Email:</strong> thetaungkhant037@gmail.com</li>
+                <li><strong>Phone:</strong> +95 967166115</li>
+            </ul>
+
+            <h2>Social Media</h2>
+            <div class="social-icons">
+                <a href="https://github.com/your-github-profile" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://facebook.com/your-facebook-page" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="project" class="tabcontent">
+        <div class="item-bar">
+            <h3>Projects</h3>
+            <span onclick="this.parentElement.parentElement.style.display='none'">X</span>
+        </div>
+
+        <div class="inside">
+            <h2>Demo Projects</h2>
+            <ul>
+                <li>
+                    <strong>Greenstore/Green house plants shop:</strong> Wordpress
+                    <p><a href="https://yohannan.42web.io/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a></p>
+                </li>
+                <li>
+                    <strong>Animated 3D earth model:</strong> Three.js and 3D model
+                    <p><a href="https://codepen.io/eanfxpbr-the-scripter/pen/bGyvdNX" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a></p>
+                </li>
+                <li>
+                    <strong>More Projects:</strong> Codepen and GitHub
+                    <p>
+                        <a href="https://github.com/ThetAungKhant037" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://codepen.io/eanfxpbr-the-scripter" target="_blank"><i class="fab fa-codepen"></i> Codepen</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="skills" class="tabcontent">
+        <div class="item-bar">
+            <h3>Skills</h3>
+            <span onclick="this.parentElement.parentElement.style.display='none'">X</span>
+        </div>
+
+        <div class="inside skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li><i class="fas fa-code"></i> Web Development</li>
+                <li><i class="fab fa-html5"></i> HTML</li>
+                <li><i class="fab fa-css3-alt"></i> CSS</li>
+                <li><i class="fab fa-js-square"></i> JavaScript</li>
+                <li><i class="fab fa-node-js"></i> Node.js</li>
+                <li><i class="fas fa-database"></i> MySQL</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tab;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        tab = document.getElementsByClassName("tab");
+        for (i = 0; i < tab.length; i++) {
+            tab[i].classList.remove("active");
+        }
+
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
